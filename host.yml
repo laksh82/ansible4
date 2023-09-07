@@ -1,0 +1,6 @@
+---
+- name: Adding host to groups
+  add_host:
+   hostname: 192.168.122.12
+   groups:
+    - group1
