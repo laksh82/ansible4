@@ -1,6 +1,4 @@
 ---
-- name: Adding host to groups
-  add_host:
-   hostname: 192.168.122.12
-   groups:
-    - group1
+- name: Add host to group 'just_created' with variable foo=42
+  ansible.builtin.add_host:
+    name: '{{ 192.168.122.12 }}'
