@@ -4,4 +4,4 @@
   tasks:
     - name: Add host 
       ansible.builtin.add_host:
-         name: '{{ 192.168.122.12 }}'
+         name: '192.168.122.12'
