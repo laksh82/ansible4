@@ -5,5 +5,5 @@
     - name: Add host 
       ansible.builtin.add_host:
          name: '192.168.122.180'
-         inventory_dir: '{{ inv-1 }}'
+         inventory_dir: '{ inv-1 }'
          
