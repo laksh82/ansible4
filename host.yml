@@ -1,7 +1,8 @@
 ---
 - name: Collect Azure VM Facts
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Add host 
       ansible.builtin.add_host:
          name: '192.168.122.12'
+         inventory_dir: '{{ new-inv }}'
