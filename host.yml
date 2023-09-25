@@ -1,6 +1,6 @@
 ---
 - name: Collect Azure VM Facts
-  hosts: 192.168.122.78
+  hosts: group
   tasks:
     - name: Add host 
       ansible.builtin.add_host:
