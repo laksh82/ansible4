@@ -1,17 +1,10 @@
-- name: Collect Azure VM Facts
+- name: Generate registration command and Register the new vm using register token
   hosts: localhost
   tasks:
-    - name: Gather Azure facts
-      azure.azcollection.azure_rm_virtualmachine_info:
-        resource_group: vm-rg
-        name: VM
-      register: vm_info
+    - name: Generate registration command
+      redhat.satellite.registration_command:
+        username: "jmungin3"
+        password: "{{ satellite_pass }}"
+        server_url: "https://satellite2.core.gtri.org"
+        activation_keys: "{{ ACTIV_KEY }}"
 
-    - name: copy in file
-      copy:
-        dest: /etc/output
-        content: "{{ vm_info }}"
-
-    - name: Display VM Facts
-      debug:
-        msg: "{{ vm_info }}"
